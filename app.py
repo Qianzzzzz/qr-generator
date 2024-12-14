@@ -49,4 +49,8 @@ def home():
 
 # Run the app
 if __name__ == "__main__":
-    app.run(debug=True)
+    # Fetch the PORT from environment variables or default to 5000 for local testing
+    port = int(os.environ.get("PORT", 5000))
+    # Bind the app to 0.0.0.0 to make it externally accessible
+    app.run(host="0.0.0.0", port=port)
+
